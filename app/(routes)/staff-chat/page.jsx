@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import {
   collection,
   doc,
@@ -25,6 +25,13 @@ export default function StaffChatPage() {
   const [loadingMessages, setLoadingMessages] = useState(false);
   const [error, setError] = useState("");
   const { user } = useUser();
+  const bottomRef = useRef(null);
+
+  useEffect(() => {
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -253,6 +260,7 @@ export default function StaffChatPage() {
                     </div>
                   ))
                 )}
+                <div ref={bottomRef}></div>
               </div>
 
               <form onSubmit={handleSendReply} className="mt-2 flex gap-2">

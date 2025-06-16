@@ -81,7 +81,9 @@ export default function Manage() {
                   className="py-3 flex items-start gap-3 justify-between flex-col md:flex-row md:items-center"
                 >
                   <div>
-                    <p className="text-gray-800 font-medium">#{user.name}</p>
+                    <p className="text-gray-800 font-medium">
+                      #{user.name || "Anonymous"}
+                    </p>
                     <p className="text-gray-800 font-medium">{user.email}</p>
                     <p className="text-sm text-gray-500">Role: {user.role}</p>
                   </div>

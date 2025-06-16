@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <>
       <section className="overflow-hidden bg-gray-50 md:grid md:grid-cols-3 p-5 gap-8 flex flex-col-reverse items-center justify-center">
-        <SignIn />
+        <SignIn forceRedirectUrl="/" />
 
         <Image
           alt="Sign-Up"
