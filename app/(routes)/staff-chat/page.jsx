@@ -133,18 +133,15 @@ export default function StaffChatPage() {
 
   return (
     <div className="p-2 mx-auto">
-      <h1
-        className="text-3xl font-bold mb-6 text-center"
-        onClick={() => console.log(messages)}
-      >
+      <h1 className="text-3xl font-bold mb-6 text-center text-black">
         📨 Staff Chat Inbox
       </h1>
 
       {error && <p className="text-red-600 text-center mb-4">{error}</p>}
 
-      <div className=" grid grid-cols-1 lg:grid-cols-4 gap-4">
+      <div className=" grid grid-cols-1 lg:grid-cols-4 gap-y-4 lg:gap-x-4 w-full">
         {/* Left Column: User List */}
-        <div className="col-span-1 bg-white border rounded-2xl shadow-md p-4 h-fit lg:h-[500px] w-full overflow-y-auto">
+        <div className="col-span-1 bg-white border rounded-2xl shadow-md p-4 h-[330px] lg:h-[500px] w-full overflow-y-auto">
           <h2 className="text-lg font-semibold mb-3">User Conversations</h2>
           {userEmails.length === 0 ? (
             <p className="text-gray-500">No user chats found.</p>
@@ -198,7 +195,7 @@ export default function StaffChatPage() {
                       <span className="font-bold">MY CONTACT</span>
                     ) : (
                       chatUser?.name || "Anonymous"
-                    )}{" "}
+                    )}
                   </p>
                 </div>
               </div>
@@ -264,7 +261,7 @@ export default function StaffChatPage() {
                   value={reply}
                   onChange={(e) => setReply(e.target.value)}
                   placeholder="Type your reply..."
-                  className="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#007E85]"
+                  className="flex-1 p-3 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-[#007E85]"
                 />
                 {reply.trim() !== "" && (
                   <button

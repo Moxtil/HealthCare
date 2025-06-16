@@ -181,7 +181,7 @@ export default function BookingPage() {
 
   return (
     <div className="p-6 pt-10 max-w-2xl mx-auto" data-aos="fade-up">
-      <h1 className="text-3xl font-bold mb-6 text-center">
+      <h1 className="text-3xl font-bold mb-6 text-center text-black">
         📝 Book an Appointment
       </h1>
 
@@ -193,7 +193,7 @@ export default function BookingPage() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Enter Full Name"
-          className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007E85]"
+          className="w-full p-2 border rounded focus:outline-none text-black focus:ring-2 focus:ring-[#007E85]"
         />
       </div>
       <div className="mb-4">
@@ -201,7 +201,7 @@ export default function BookingPage() {
         <select
           value={service}
           onChange={(e) => setService(e.target.value)}
-          className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007E85]"
+          className="w-full p-2 border rounded text-black focus:outline-none focus:ring-2 focus:ring-[#007E85]"
         >
           <option value="">-- Choose a service --</option>
           <option value="examination">Medical examination</option>
@@ -221,7 +221,7 @@ export default function BookingPage() {
             setDate(e.target.value);
             setTime(""); // reset time when date changes
           }}
-          className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007E85]"
+          className="w-full p-2 border rounded focus:outline-none text-black focus:ring-2 focus:ring-[#007E85]"
         />
       </div>
 

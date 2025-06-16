@@ -73,11 +73,11 @@ export default function UserChatPage() {
 
   return (
     <div className="p-6 pt-10 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-center">
+      <h1 className="text-3xl font-bold mb-6 text-center text-black">
         💬 Chat with Staff
       </h1>
 
-      <div className="border rounded-2xl h-[500px] overflow-y-auto bg-white p-4 shadow-md mb-4">
+      <div className="border border-black rounded-2xl h-[500px] overflow-y-auto bg-white p-4 shadow-md mb-4">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -107,7 +107,7 @@ export default function UserChatPage() {
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#186d71]"
+          className="flex-1 p-3 border-black border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#186d71]"
           placeholder="Type your message..."
         />
         {message.trim() !== "" && (
