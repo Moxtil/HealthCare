@@ -29,7 +29,7 @@ export default function StaffChatPage() {
 
   useEffect(() => {
     if (bottomRef.current) {
-      bottomRef.current.scrollIntoView({ behavior: "smooth" });
+      bottomRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [messages]);
 
@@ -211,7 +211,7 @@ export default function StaffChatPage() {
         </div>
 
         {/* Right Column: Chat Window */}
-        <div className="col-span-3 bg-white border rounded-2xl shadow-md p-4 flex flex-col h-[500px]">
+        <div className="col-span-3 bg-white border rounded-2xl shadow-md p-4 flex flex-col h-[500px] overflow-y-auto">
           {selectedUser ? (
             <>
               <div className="flex-1 overflow-y-auto pr-2">

@@ -42,7 +42,9 @@ export default function UserChatPage() {
   }, [userEmail]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
   }, [messages]);
 
   const sendMessage = async (e) => {
