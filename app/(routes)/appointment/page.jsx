@@ -134,7 +134,7 @@ export default function BookingPage() {
 
   if (!user) {
     return (
-      <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr from-[#E0F7F9] to-[#B2DFDB] px-6">
+      <section className="flex flex-col justify-center items-center px-6">
         <div className="max-w-xl bg-white rounded-xl shadow-xl p-12 text-center w-full">
           <h1 className="text-4xl font-extrabold text-[#007E85] mb-6 flex justify-center items-center gap-3 select-none">
             <FiCheckCircle size={40} />
@@ -164,7 +164,7 @@ export default function BookingPage() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col bg-gradient-to-tr ">
+    <main className="flex flex-col bg-gradient-to-tr ">
       {/* Header */}
 
       <section className="flex flex-1 flex-col lg:flex-row gap-6 py-5">

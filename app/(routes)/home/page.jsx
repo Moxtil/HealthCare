@@ -103,7 +103,7 @@ export default function page() {
 
               <div className="mt-8">
                 <Link
-                  href="/appointments"
+                  href="/appointment"
                   className="inline-block rounded-sm bg-gradient-to-r from-[#007E85] to-[#2b8186] px-12 py-3 text-sm font-medium text-white transition hover:from-[#2b8186] hover:to-[#005f60] focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
                 >
                   Get Started Today
