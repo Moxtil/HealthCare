@@ -76,7 +76,7 @@ export default function UserChatPage() {
   return (
     <div className="p-6 pt-10 max-w-2xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center text-black">
-        💬 Chat with Staff
+        Chat with Staff
       </h1>
 
       <div className="border border-black rounded-2xl h-[500px] overflow-y-auto bg-white p-4 shadow-md mb-4">

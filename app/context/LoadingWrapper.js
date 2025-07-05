@@ -1,7 +1,6 @@
 "use client";
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { AuthContext, useAuth } from "./AuthContext";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 import icon from "../../assets/icon.svg";

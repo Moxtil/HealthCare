@@ -88,15 +88,23 @@ export default function page() {
                 You have lots of reasons to choose us
               </h2>
 
-              <p className=" text-[#555555] md:mt-4 block">
-                Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit
-                phasellus mollis sit aliquam sit nullam.{" "}
+              <p className="text-[#555555] md:mt-4 block leading-relaxed">
+                We combine expertise, compassion, and the latest technology to
+                offer unparalleled care tailored just for you. From emergency
+                services to preventive care, your health is our priority.
               </p>
 
-              <div className="mt-4 md:mt-8">
+              <ul className="mt-6 list-disc list-inside text-left text-[#007E85] space-y-2 font-semibold">
+                <li>Experienced & compassionate medical team</li>
+                <li>State-of-the-art diagnostic equipment</li>
+                <li>Personalized treatment plans</li>
+                <li>24/7 Emergency care availability</li>
+              </ul>
+
+              <div className="mt-8">
                 <Link
                   href="/appointments"
-                  className="inline-block rounded-sm bg-[#007E85] px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
+                  className="inline-block rounded-sm bg-gradient-to-r from-[#007E85] to-[#2b8186] px-12 py-3 text-sm font-medium text-white transition hover:from-[#2b8186] hover:to-[#005f60] focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
                 >
                   Get Started Today
                 </Link>
@@ -110,6 +118,41 @@ export default function page() {
             className="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
           />
         </section>
+      </section>
+      <section
+        className=" py-12 px-6 rounded-xl my-12y mx-auto"
+        data-aos="fade-up"
+      >
+        <h2 className="text-4xl text-center font-extrabold text-[#007E85] mb-8">
+          Why Choose Our Hospital?
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="bg-white p-8 rounded-xl shadow-md cursor-pointer">
+            <h3 className="text-xl font-semibold mb-3">
+              Cutting-Edge Technology
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              We utilize the latest medical equipment ensuring precise
+              diagnostics and effective treatment plans.
+            </p>
+          </div>
+          <div className="bg-white p-8 rounded-xl shadow-md cursor-pointer">
+            <h3 className="text-xl font-semibold mb-3">Experienced Staff</h3>
+            <p className="text-gray-700 leading-relaxed">
+              Our team consists of highly qualified specialists dedicated to
+              your well-being.
+            </p>
+          </div>
+          <div className="bg-white p-8 rounded-xl shadow-md cursor-pointer">
+            <h3 className="text-xl font-semibold mb-3">
+              Patient-Centered Care
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              We believe in holistic care that respects your preferences and
+              provides emotional support.
+            </p>
+          </div>
+        </div>
       </section>
       <section className="my-12" data-aos="fade-up">
         <h1 className="text-center mt-2 text-[#007E85] text-4xl font-semibold">

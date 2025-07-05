@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import { db } from "../../../../firebase/config"; // adjust path as needed
+import { db } from "../../../../firebase/config";
 import {
   collection,
   getDocs,
@@ -9,17 +9,15 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { RxDashboard } from "react-icons/rx";
-
-import { FaUserAlt, FaTrash, FaEdit } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../../context/AuthContext";
-import { useRouter } from "next/navigation";
 
 export default function Manage() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const { role } = useContext(AuthContext);
-  const router = useRouter();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -54,40 +52,59 @@ export default function Manage() {
 
   if (role !== "admin")
     return (
-      <p className="p-6 pt-24 text-center text-red-500">
-        You are not authorized to view this page.
-      </p>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-[#E0F7F9] to-[#B2DFDB] px-4">
+        <p className="text-red-600 text-xl font-semibold select-none">
+          You are not authorized to view this page.
+        </p>
+      </div>
     );
-  return (
-    <div className="p-6 max-w-5xl mx-auto pt-10">
-      <h1 className="text-4xl font-bold mb-10 text-center flex items-center justify-center gap-1 text-[#007E85]">
-        <RxDashboard /> Admin Dashboard
-      </h1>
 
-      {loading ? (
-        <div className="loader"></div>
-      ) : (
-        <div className="space-y-10">
-          {/* Users */}
-          <div className="bg-white rounded-xl shadow p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <FaUserAlt className="text-[#007E85] text-xl" />
-              <h2 className="text-2xl font-semibold">Users</h2>
+  return (
+    <main className="min-h-screen p-8 bg-gradient-to-tr from-[#E0F7F9] to-[#B2DFDB]">
+      <div className="max-w-6xl mx-auto flex flex-col gap-10">
+        <header className="flex items-center justify-center gap-3 text-[#007E85] select-none">
+          <RxDashboard size={40} />
+          <h1 className="text-4xl font-extrabold">
+            Admin Dashboard - Manage Users
+          </h1>
+        </header>
+
+        {loading ? (
+          <div className="flex justify-center">
+            <div className="loader border-t-[#007E85]"></div>
+          </div>
+        ) : (
+          <section className="bg-white rounded-3xl shadow-lg p-8 border border-[#007E85]/30">
+            <div className="flex items-center gap-3 mb-6 text-[#007E85]">
+              <FaUserAlt size={28} />
+              <h2 className="text-3xl font-bold select-none">Users</h2>
             </div>
-            <ul className="divide-y divide-gray-200">
+            <ul className="divide-y divide-gray-200 max-h-[480px] overflow-y-auto">
+              {users.length === 0 && (
+                <li className="text-gray-500 text-center py-10">
+                  No users found.
+                </li>
+              )}
+
               {users.map((user) => (
                 <li
                   key={user.id}
-                  className="py-3 flex items-start gap-3 justify-between flex-col md:flex-row md:items-center"
+                  className="py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0"
                 >
                   <div>
-                    <p className="text-gray-800 font-medium">
+                    <p className="text-gray-900 font-semibold select-text">
                       #{user.name || "Anonymous"}
                     </p>
-                    <p className="text-gray-800 font-medium">{user.email}</p>
-                    <p className="text-sm text-gray-500">Role: {user.role}</p>
+                    <p className="text-gray-700 select-text">{user.email}</p>
+                    <p className="text-sm text-gray-500 select-text">
+                      Role:{" "}
+                      <span className="capitalize font-medium">
+                        {user.role}
+                      </span>
+                    </p>
                   </div>
-                  <div className="flex gap-3">
+
+                  <div className="flex flex-wrap gap-3">
                     {user?.role !== "admin" && (
                       <button
                         onClick={() => {
@@ -105,7 +122,7 @@ export default function Manage() {
                             }
                           });
                         }}
-                        className="text-sm md:text-[16px] text-yellow-500 hover:text-yellow-700 hover:border-yellow-700 cursor-pointer transition border-2 border-yellow-500 px-4 py-2"
+                        className="text-yellow-600 border-2 border-yellow-500 hover:text-yellow-800 hover:border-yellow-700 px-5 py-2 rounded-full font-semibold transition cursor-pointer select-none whitespace-nowrap"
                         title="Toggle Role"
                       >
                         Change role to {user.role === "user" ? "Staff" : "User"}
@@ -129,7 +146,7 @@ export default function Manage() {
                             }
                           });
                         }}
-                        className="text-sm md:text-[16px] text-red-500 hover:text-red-700 hover:border-red-700 transition border-2 border-red-600 px-5 py-2 cursor-pointer"
+                        className="text-red-600 border-2 border-red-500 hover:text-red-800 hover:border-red-700 px-5 py-2 rounded-full font-semibold transition cursor-pointer select-none whitespace-nowrap"
                         title="Delete User"
                       >
                         Delete User
@@ -138,13 +155,10 @@ export default function Manage() {
                   </div>
                 </li>
               ))}
-              {users.length === 0 && (
-                <li className="text-gray-400">No users found.</li>
-              )}
             </ul>
-          </div>
-        </div>
-      )}
-    </div>
+          </section>
+        )}
+      </div>
+    </main>
   );
 }

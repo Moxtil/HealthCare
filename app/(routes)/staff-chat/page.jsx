@@ -141,7 +141,7 @@ export default function StaffChatPage() {
   return (
     <div className="p-2 mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center text-black">
-        📨 Staff Chat Inbox
+        Staff Chat Inbox
       </h1>
 
       {error && <p className="text-red-600 text-center mb-4">{error}</p>}
