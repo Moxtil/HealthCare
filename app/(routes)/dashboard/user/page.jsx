@@ -53,7 +53,7 @@ export default function UserDashboard() {
 
   if (!user) {
     return (
-      <div className=" flex items-center justify-center bg-gradient-to-tr from-[#E0F7F9] to-[#B2DFDB] px-4 py-16">
+      <div className=" flex items-center justify-center px-4 py-16">
         <div className="max-w-3xl text-center bg-white p-10 rounded-3xl shadow-lg border border-[#007E85]/40">
           <h1 className="text-4xl font-extrabold text-[#007E85] mb-4 select-none">
             Sign in or create an account to{" "}

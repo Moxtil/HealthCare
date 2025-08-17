@@ -17,9 +17,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   background-color: #eee;
+  overflow-x: hidden;
 }
 .contact-page-header {
   background-image: url("../assets/contact.svg");
+}
+
+.sign-up,
+.login {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sign-up {
+  background-image: url("../assets/Container.svg");
+}
+.login {
+  background-image: url("./../assets/Container.svg");
 }
 
 /* HTML: <div class="loader"></div> */

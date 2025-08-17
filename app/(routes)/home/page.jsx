@@ -27,27 +27,30 @@ import CarouselComponent from "../../components/Carousel";
 export default function page() {
   return (
     <div>
-      <section
-        data-aos="fade-up"
-        className="bg-white lg:grid lg:h-screen lg:place-content-center"
-      >
+      <section className="bg-white lg:grid lg:h-screen lg:place-content-center">
         <div className="mx-auto w-full px-4 py-8 sm:px-6 sm:py-24 flex flex-col-reverse  md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32 ">
           <div className="max-w-prose text-left">
-            <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+            <h1
+              className="text-4xl font-bold text-gray-900 sm:text-5xl"
+              data-aos="fade-up"
+            >
               Providing Quality{" "}
               <span className="text-[#007E85]">Healthcare</span> for a{" "}
               <span className="text-[#6EAB36]">Brighter</span> and{" "}
               <span className="text-[#6EAB36]">Healthy</span> Future
             </h1>
 
-            <p className="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
+            <p
+              className="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed"
+              data-aos="fade-up"
+            >
               At our hospital, we are dedicated to providing exceptional medical
               care to our patients and their families. Our experienced team of
               medical professionals, cutting-edge technology, and compassionate
               approach make us a leader in the healthcare industry
             </p>
 
-            <div className="mt-4 flex gap-4 sm:mt-6">
+            <div className="mt-4 flex gap-4 sm:mt-6" data-aos="fade-up">
               <Link
                 className="inline-block rounded border border-[#007E85] bg-[#007E85] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#2b8186] tracking-wider"
                 href="/appointment"
@@ -57,7 +60,7 @@ export default function page() {
             </div>
           </div>
 
-          <div className="relative m-2 ">
+          <div className="relative m-2" data-aos="fade-left">
             <Image
               src={DocImg}
               alt="Doc"
@@ -69,7 +72,10 @@ export default function page() {
         </div>
       </section>
       <section className="my-8">
-        <h1 className="text-center my-6 text-[#007E85] text-4xl font-semibold">
+        <h1
+          className="text-center my-6 text-[#007E85] text-4xl font-semibold"
+          data-aos="fade-up"
+        >
           Our results in numbers
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-4 my-8">
@@ -78,30 +84,36 @@ export default function page() {
           <ResultsNum num={"12"} perc={"K"} title={"Patients Recovered"} />
           <ResultsNum num={"240"} perc={"%"} title={"Company growth"} />
         </div>
-        <section
-          data-aos="fade-up"
-          className="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center"
-        >
+        <section className="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
           <div className="p-8 md:p-12 lg:px-16 lg:py-24">
             <div className="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-              <h2 className="text-3xl font-bold text-[#007E85] md:text-3xl">
+              <h2
+                className="text-3xl font-bold text-[#007E85] md:text-3xl"
+                data-aos="fade-up"
+              >
                 You have lots of reasons to choose us
               </h2>
 
-              <p className="text-[#555555] md:mt-4 block leading-relaxed">
+              <p
+                className="text-[#555555] md:mt-4 block leading-relaxed"
+                data-aos="fade-up"
+              >
                 We combine expertise, compassion, and the latest technology to
                 offer unparalleled care tailored just for you. From emergency
                 services to preventive care, your health is our priority.
               </p>
 
-              <ul className="mt-6 list-disc list-inside text-left text-[#007E85] space-y-2 font-semibold">
+              <ul
+                className="mt-6 list-disc list-inside text-left text-[#007E85] space-y-2 font-semibold"
+                data-aos="fade-up"
+              >
                 <li>Experienced & compassionate medical team</li>
                 <li>State-of-the-art diagnostic equipment</li>
                 <li>Personalized treatment plans</li>
                 <li>24/7 Emergency care availability</li>
               </ul>
 
-              <div className="mt-8">
+              <div className="mt-8" data-aos="fade-up">
                 <Link
                   href="/appointment"
                   className="inline-block rounded-sm bg-gradient-to-r from-[#007E85] to-[#2b8186] px-12 py-3 text-sm font-medium text-white transition hover:from-[#2b8186] hover:to-[#005f60] focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
@@ -113,21 +125,25 @@ export default function page() {
           </div>
 
           <Image
+            data-aos="fade-up"
             alt="BG"
             src={ContainImg}
             className="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
           />
         </section>
       </section>
-      <section
-        className=" py-12 px-6 rounded-xl my-12y mx-auto"
-        data-aos="fade-up"
-      >
-        <h2 className="text-4xl text-center font-extrabold text-[#007E85] mb-8">
+      <section className=" py-12 px-6 rounded-xl my-12y mx-auto">
+        <h2
+          className="text-4xl text-center font-extrabold text-[#007E85] mb-8"
+          data-aos="fade-up"
+        >
           Why Choose Our Hospital?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="bg-white p-8 rounded-xl shadow-md cursor-pointer">
+          <div
+            className="bg-white p-8 rounded-xl shadow-md cursor-pointer"
+            data-aos="zoom-in"
+          >
             <h3 className="text-xl font-semibold mb-3">
               Cutting-Edge Technology
             </h3>
@@ -136,14 +152,20 @@ export default function page() {
               diagnostics and effective treatment plans.
             </p>
           </div>
-          <div className="bg-white p-8 rounded-xl shadow-md cursor-pointer">
+          <div
+            className="bg-white p-8 rounded-xl shadow-md cursor-pointer"
+            data-aos="zoom-in"
+          >
             <h3 className="text-xl font-semibold mb-3">Experienced Staff</h3>
             <p className="text-gray-700 leading-relaxed">
               Our team consists of highly qualified specialists dedicated to
               your well-being.
             </p>
           </div>
-          <div className="bg-white p-8 rounded-xl shadow-md cursor-pointer">
+          <div
+            className="bg-white p-8 rounded-xl shadow-md cursor-pointer"
+            data-aos="zoom-in"
+          >
             <h3 className="text-xl font-semibold mb-3">
               Patient-Centered Care
             </h3>
@@ -154,11 +176,14 @@ export default function page() {
           </div>
         </div>
       </section>
-      <section className="my-12" data-aos="fade-up">
-        <h1 className="text-center mt-2 text-[#007E85] text-4xl font-semibold">
+      <section className="my-12">
+        <h1
+          className="text-center mt-2 text-[#007E85] text-4xl font-semibold"
+          data-aos="fade-up"
+        >
           Services we provide{" "}
         </h1>
-        <p className="text-[#555555aa] text-sm text-center">
+        <p className="text-[#555555aa] text-sm text-center" data-aos="fade-up">
           Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar
           elementum tempus hac tellus libero accumsan.{" "}
         </p>
@@ -171,11 +196,14 @@ export default function page() {
           <ServicesCard title={"Eye care"} img={img6} />
         </div>
       </section>
-      <section className="my-14" data-aos="fade-up">
-        <h1 className="text-center mt-2 text-[#007E85] text-4xl font-semibold">
+      <section className="my-14">
+        <h1
+          className="text-center mt-2 text-[#007E85] text-4xl font-semibold"
+          data-aos="fade-up"
+        >
           Meet our team members{" "}
         </h1>
-        <p className="text-[#555555aa] text-sm text-center">
+        <p className="text-[#555555aa] text-sm text-center" data-aos="fade-up">
           Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar
           elementum tempus hac tellus libero accumsan.{" "}
         </p>
@@ -204,11 +232,14 @@ export default function page() {
           />
         </div>
       </section>
-      <section className="my-14" data-aos="fade-up">
-        <h1 className="text-center mt-2 text-[#007E85] text-4xl font-semibold">
+      <section className="my-14">
+        <h1
+          className="text-center mt-2 text-[#007E85] text-4xl font-semibold"
+          data-aos="fade-up"
+        >
           Testimonial
         </h1>
-        <p className="text-[#555555aa] text-sm text-center">
+        <p className="text-[#555555aa] text-sm text-center" data-aos="fade-up">
           Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar
           elementum tempus hac tellus libero accumsan.{" "}
         </p>
@@ -233,12 +264,18 @@ export default function page() {
           />
         </div>
       </section>
-      <section className="my-14" data-aos="fade-up">
-        <h1 className="text-center mt-2 text-[#007E85] text-4xl font-semibold">
+      <section className="my-14">
+        <h1
+          className="text-center mt-2 text-[#007E85] text-4xl font-semibold"
+          data-aos="fade-up"
+        >
           Trusted by 10,000+ companies around the world
         </h1>
 
-        <div className="flex items-center justify-center w-full">
+        <div
+          className="flex items-center justify-center w-full"
+          data-aos="fade-up"
+        >
           <CarouselComponent />
         </div>
       </section>

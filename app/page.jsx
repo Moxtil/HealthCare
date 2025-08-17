@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { useEffect } from "react";
+import { IoHomeOutline } from "react-icons/io5";
 export default function Home() {
   const router = useRouter();
   const { user, isLoaded, isSignedIn } = useUser();
@@ -37,10 +38,11 @@ export default function Home() {
 
             <div className="mt-4 flex justify-center gap-4 sm:mt-6">
               <Link
-                className="inline-block rounded border  bg-[#007E85] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#539498]"
+                className="flex items-center gap-2 rounded border  bg-[#007E85] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-[#539498]"
                 href="/home"
               >
-                Get Started
+                <IoHomeOutline size={20} />{" "}
+                <span className="inline">Home Page</span>
               </Link>
 
               <Link

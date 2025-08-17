@@ -136,7 +136,7 @@ export default function BookingPage() {
     return (
       <section className="flex flex-col justify-center items-center px-6">
         <div className="max-w-xl bg-white rounded-xl shadow-xl p-12 text-center w-full">
-          <h1 className="text-4xl font-extrabold text-[#007E85] mb-6 flex justify-center items-center gap-3 select-none">
+          <h1 className="text-4xl flex-col font-extrabold text-[#007E85] mb-6 flex justify-center items-center gap-3 select-none">
             <FiCheckCircle size={40} />
             Book your healthcare appointment
           </h1>

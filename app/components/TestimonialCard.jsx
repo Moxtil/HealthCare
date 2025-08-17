@@ -3,7 +3,10 @@ import React from "react";
 
 export default function TestimonialCard({ img, comment, name, time }) {
   return (
-    <div className="block rounded-md border border-gray-300 p-4 shadow-sm sm:p-6 col-span-1 bg-[#ffffff]">
+    <div
+      data-aos="zoom-in"
+      className="block rounded-md border border-gray-300 p-4 shadow-sm sm:p-6 col-span-1 bg-[#ffffff]"
+    >
       <div className="sm:flex sm:justify-between sm:gap-4 lg:gap-6">
         <div className="sm:order-last sm:shrink-0">
           <Image

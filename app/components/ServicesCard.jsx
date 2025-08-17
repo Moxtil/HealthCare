@@ -4,7 +4,10 @@ import React from "react";
 
 export default function ServicesCard({ img, title }) {
   return (
-    <article className="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg col-span-1">
+    <article
+      className="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg col-span-1"
+      data-aos="zoom-in"
+    >
       <Image alt="Service" src={img} className="h-56 w-full object-cover" />
 
       <div className="bg-white p-4 sm:p-6">
