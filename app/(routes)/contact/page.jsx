@@ -1,5 +1,5 @@
-// import { LargeLoadingSkeleton } from "../../components/LargeLoadingSkeleton";
-// import { LoadingSkeleton } from "../../components/LoadingSkeleton";
+"use client";
+
 import Link from "next/link";
 import { Suspense } from "react";
 import {
@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import LoadingSkeleton from "../../components/LoadingSkeleton";
 import LargeLoadingSkeleton from "../../components/LargeLoadingSkeleton";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   return (
@@ -30,110 +31,153 @@ export default function ContactPage() {
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Contact Info */}
           <div className="flex flex-col justify-center space-y-6">
-            <h1
+            <motion.h1
               className="text-4xl md:text-5xl font-bold tracking-tight"
-              data-aos="fade-down"
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
               Get in Touch
-            </h1>
-            <p className="text-gray-400" data-aos="fade-down">
+            </motion.h1>
+
+            <motion.p
+              className="text-gray-400"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               We’d love to hear from you! Whether you have a question, feedback,
               or just want to say hello, feel free to reach out.
-            </p>
+            </motion.p>
 
             <div className="space-y-3">
-              <p className="text-lg" data-aos="fade-down">
-                <span className="font-semibold">Email:</span>{" "}
-                contact@example.com
-              </p>
-              <p className="text-lg" data-aos="fade-down">
-                <span className="font-semibold">Phone:</span> +123 456 7890
-              </p>
-              <p className="text-lg" data-aos="fade-down">
-                <span className="font-semibold">Location:</span> Istanbul,
-                Turkey
-              </p>
+              {[
+                { label: "Email", value: "contact@example.com" },
+                { label: "Phone", value: "+123 456 7890" },
+                { label: "Location", value: "Istanbul, Turkey" },
+              ].map((item, i) => (
+                <motion.p
+                  key={i}
+                  className="text-lg"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: i * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="font-semibold">{item.label}:</span>{" "}
+                  {item.value}
+                </motion.p>
+              ))}
             </div>
 
             {/* Social Media */}
-            <div className="flex space-x-4 mt-4">
-              <Link
-                href="#"
-                className="p-3 rounded-full bg-[#007E85] text-white hover:bg-[#015f63] transition"
-                data-aos="fade-right"
-              >
-                <FaFacebookF size={20} />
-              </Link>
-              <Link
-                href="#"
-                className="p-3 rounded-full bg-[#007E85] text-white hover:bg-[#015f63] transition"
-                data-aos="fade-down"
-              >
-                <FaTwitter size={20} />
-              </Link>
-              <Link
-                href="#"
-                className="p-3 rounded-full bg-[#007E85] text-white hover:bg-[#015f63] transition"
-                data-aos="fade-up"
-              >
-                <FaInstagram size={20} />
-              </Link>
-              <Link
-                href="#"
-                className="p-3 rounded-full bg-[#007E85] text-white hover:bg-[#015f63] transition"
-                data-aos="fade-left"
-              >
-                <FaLinkedinIn size={20} />
-              </Link>
-            </div>
+            <motion.div
+              className="flex space-x-4 mt-4"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.2 },
+                },
+              }}
+            >
+              {[
+                { icon: <FaFacebookF size={20} />, delay: 0 },
+                { icon: <FaTwitter size={20} />, delay: 0.1 },
+                { icon: <FaInstagram size={20} />, delay: 0.2 },
+                { icon: <FaLinkedinIn size={20} />, delay: 0.3 },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0 },
+                  }}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <button className="cursor-pointer p-3 rounded-full bg-[#007E85] text-white hover:bg-[#015f63] transition w-full">
+                    {item.icon}
+                  </button>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
-          {/* Contact Form */}
-          <div
+          <motion.div
             className="bg-gray-800 rounded-2xl shadow-lg p-8"
-            data-aos="zoom-in"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true }}
           >
-            <h2
-              className="text-2xl font-semibold mb-6 text-[#009ca4]"
-              data-aos="fade-down"
+            <motion.h2
+              className="text-2xl font-semibold mb-6 text-white"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
               Send a Message
-            </h2>
+            </motion.h2>
+
             <form className="space-y-5">
-              <div>
-                <label className="block mb-2 text-sm font-medium">Name</label>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full p-3 rounded-xl bg-gray-900 text-[#007E85] border border-gray-700 focus:ring-2 focus:ring-indigo-500 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium">Email</label>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full p-3 rounded-xl bg-gray-900 text-[#007E85] border border-gray-700 focus:ring-2 focus:ring-indigo-500 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium">
+              {[
+                { label: "Name", type: "text", placeholder: "Your Name" },
+                { label: "Email", type: "email", placeholder: "Your Email" },
+              ].map((field, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: i * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <label className="block mb-2 text-sm font-medium text-white">
+                    {field.label}
+                  </label>
+                  <input
+                    type={field.type}
+                    placeholder={field.placeholder}
+                    className="w-full p-3 rounded-xl bg-gray-900 text-white border border-gray-700 focus:ring-1 focus:ring-white outline-none"
+                  />
+                </motion.div>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <label className="block mb-2 text-sm font-medium text-white">
                   Message
                 </label>
                 <textarea
                   rows="5"
                   placeholder="Write your message..."
-                  className="w-full p-3 rounded-xl bg-gray-900 text-[#007E85] border border-gray-700 focus:ring-2 focus:ring-indigo-500 outline-none"
+                  className="w-full p-3 rounded-xl bg-gray-900 text-white border border-gray-700 focus:ring-1 focus:ring-white outline-none"
                 ></textarea>
-              </div>
-              <button
+              </motion.div>
+
+              <motion.button
                 type="submit"
-                className="cursor-pointer w-full py-3 rounded-xl bg-[#007E85] text-white hover:bg-[#00575c] transition font-semibold"
+                className="cursor-pointer w-full py-3 rounded-xl bg-[#007E85] text-white hover:bg-[#007076] transition font-semibold"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: true }}
               >
                 Send Message
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </Suspense>
