@@ -3,10 +3,7 @@ import React from "react";
 
 export default function TeamCards({ img, job, name }) {
   return (
-    <div
-      data-aos="zoom-in"
-      className="relative col-span-1 flex flex-col justify-center items-center m-2 p-2 text-center gap-2 bg-[#ffffff] shadow-sm rounded-sm"
-    >
+    <div className="relative col-span-1 flex flex-col justify-center items-center m-2 p-2 text-center gap-2 bg-[#ffffff] shadow-sm rounded-sm border-2 border-transparent hover:border-[#007E85] transition-all">
       <Image
         src={img}
         alt="Team-member"
