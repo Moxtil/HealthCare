@@ -4,6 +4,8 @@ import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "../../context/AuthContext";
 import { useUser } from "@clerk/nextjs";
+import LargeLoadingSkeleton from "../../components/LargeLoadingSkeleton";
+import LoadingSkeleton from "../../components/LoadingSkeleton";
 
 export default function DashboardRedirect() {
   const { role, loading } = useContext(AuthContext);
@@ -23,12 +25,14 @@ export default function DashboardRedirect() {
 
   if (isLoaded) {
     return (
-      <div className="w-full text-center p-4 flex items-center flex-col gap-1 pt-24 mx-auto text-gray-600">
-        <p>Checking . . .</p>
-        <p className="text-gray-400">
-          (refresh the page when it takes so long)
-        </p>
-        <div className="loader"></div>
+      <div className="flex flex-col gap-8 mt-10 p-6">
+        <LargeLoadingSkeleton />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
+          <LoadingSkeleton />
+          <LoadingSkeleton />
+          <LoadingSkeleton />
+          <LoadingSkeleton />
+        </div>
       </div>
     );
   }
