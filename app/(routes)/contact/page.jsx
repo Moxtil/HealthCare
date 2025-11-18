@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 
 import { motion } from "framer-motion";
-import { GPTLoaderSkeleton } from "@/app/components/GPTLoaderSkeleton";
+import { GPTLoaderSkeleton } from "../../components/GPTLoaderSkeleton";
 
 export default function ContactPage() {
   return (
