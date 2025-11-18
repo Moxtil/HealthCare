@@ -8,25 +8,13 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
-import LoadingSkeleton from "../../components/LoadingSkeleton";
-import LargeLoadingSkeleton from "../../components/LargeLoadingSkeleton";
+
 import { motion } from "framer-motion";
+import { GPTLoaderSkeleton } from "@/app/components/GPTLoaderSkeleton";
 
 export default function ContactPage() {
   return (
-    <Suspense
-      fallback={
-        <div className="flex flex-col gap-8 mt-10 p-6">
-          <LargeLoadingSkeleton />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
-            <LoadingSkeleton />
-            <LoadingSkeleton />
-            <LoadingSkeleton />
-            <LoadingSkeleton />
-          </div>
-        </div>
-      }
-    >
+    <Suspense fallback={<GPTLoaderSkeleton />}>
       <div className=" text-[#007E85] flex items-center justify-center p-6">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Contact Info */}
